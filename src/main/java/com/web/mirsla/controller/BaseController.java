@@ -1,7 +1,13 @@
 package com.web.mirsla.controller;
 
 /**
- * Created by ziyang on 2017/10/11.
+ * Created by Mirsla on 2017/10/11.
  */
+
 public class BaseController {
+
+    public String getAuthUrl(){
+        return null;
+    }
+
 }

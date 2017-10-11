@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-public class HelloWorldController  {
+public class HelloWorldController  extends BaseController{
 
     @RequestMapping("/hello")
     public String helloWorld(){
         return "hello World";
     }
+
+
 }
