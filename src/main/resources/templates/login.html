@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <title>注册 - Mirsla</title>
-        <link rel="stylesheet" type="text/css" href="../static/css/login/register-login.css">
-        <link rel="stylesheet" href="../static/css/login/layer.css" id="layui_layer_skinlayercss" style=""></head>
+    <title>登陆 - Mirsla</title>
+        <link rel="stylesheet" type="text/css" th:href="@{~/css/login/register-login.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{~/css/login/layer.css}" />
+        <!--<link rel="stylesheet" type="text/css" href="../static/css/login/register-login.css" />
+        <link rel="stylesheet" href="../static/css/login/layer.css" id="layui_layer_skinlayercss" style="" />--></head>
 <body>
 <div id="box"><canvas class="particles-js-canvas-el" width="1920" height="925" style="width: 100%; height: 100%;"></canvas></div>
 <div class="cent-box">
@@ -11,7 +13,6 @@
         <h1 >Mirsla</h1>
         <h2 class="sub-title">GitHub 开源项目 - Spring Boot Work</h2>
     </div>
-
     <div class="cont-main clearfix">
         <div class="index-tab">
             <div class="index-slide-nav">
@@ -24,14 +25,14 @@
         <div class="login form">
             <div class="group">
                 <div class="group-ipt email">
-                    <input type="text" name="email" id="email" class="ipt" placeholder="邮箱地址" required="">
+                    <input type="text" name="email" id="email" class="ipt" placeholder="邮箱地址" required="" />
                 </div>
                 <div class="group-ipt password">
-                    <input type="password" name="password" id="password" class="ipt" placeholder="输入您的登录密码" required="">
+                    <input type="password" name="password" id="password" class="ipt" placeholder="输入您的登录密码" required="" />
                 </div>
                 <div class="group-ipt verify">
-                    <input type="text" name="verify" id="verify" class="ipt" placeholder="输入验证码" required="">
-                    <img src="" class="imgcode">
+                    <input type="text" name="verify" id="verify" class="ipt" placeholder="输入验证码" required="" />
+                    <img src="" class="imgcode" />
                 </div>
             </div>
         </div>
@@ -41,7 +42,7 @@
         </div>
 
         <div class="remember clearfix">
-            <label class="remember-me"><span class="icon"><span class="zt"></span></span><input type="checkbox" name="remember-me" id="remember-me" class="remember-mecheck" checked="">记住我</label>
+            <label class="remember-me"><span class="icon"><span class="zt"></span></span><input type="checkbox" name="remember-me" id="remember-me" class="remember-mecheck" checked="" />记住我</label>
             <label class="forgot-password">
                 <a href="#">忘记密码？</a>
             </label>
@@ -54,11 +55,11 @@
     <p>Designed By Mirsla &amp; <a href="http://Mirsla.me">Mirsla.me</a> 2017</p>
 </div>
 
-<script src="../static/js/login/particles.js" type="text/javascript"></script>
+<!--<script src="../static/js/login/particles.js" type="text/javascript"></script>
 <script src="../static/js/login/background.js" type="text/javascript"></script>
 <script src="../static/js/login/jquery.min.js" type="text/javascript"></script>
 <script src="../static/js/login/layer.js" type="text/javascript"></script>
-<script src="../static/js/login/index.js" type="text/javascript"></script>
+<script src="../static/js/login/index.js" type="text/javascript"></script>--><!--
 <script>
     $('.imgcode').hover(function(){
         layer.tips("看不清？点击更换", '.verify', {
@@ -78,6 +79,6 @@
             $(".zt").hide();
         }
     });
-</script>
+</script>-->
 
 </body></html>
