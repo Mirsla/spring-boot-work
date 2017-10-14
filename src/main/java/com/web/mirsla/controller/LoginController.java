@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
  * @Author: Mirsla
  * @DescripTion:
  * @Date: Created in  2017.10.11
- * @Modified By:
+ * @Modified By:登录相关
  */
 @Controller
 public class LoginController{
@@ -21,7 +21,14 @@ public class LoginController{
 //    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(HttpServletRequest request){
         request.setAttribute("name","mirsla");
-        return "login";
+        return "login/login";
+    }
+
+//    public String
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register(){
+        return "login/register";
     }
 
 }
