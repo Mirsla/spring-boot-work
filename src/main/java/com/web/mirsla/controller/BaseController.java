@@ -1,7 +1,10 @@
 package com.web.mirsla.controller;
 
 /**
- * Created by Mirsla on 2017/10/11.
+ * @Author: Mirsla
+ * @DescripTion:
+ * @Date: Created in  2017.10.11
+ * @Modified By:登录相关
  */
 
 public class BaseController {
