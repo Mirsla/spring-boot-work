@@ -1,5 +1,7 @@
 package com.web.mirsla.Service.inter;
 
+import com.web.mirsla.entity.Member;
+
 /**
  * @author: Mirsla
  * @descripTion:
@@ -21,5 +23,12 @@ public interface LoginService {
      * @return
      */
     public Boolean checkEmail(String email);
+
+    /**
+     * 添加用户
+     * @param member
+     * @return
+     */
+    public Integer insertMember(Member member);
 
 }

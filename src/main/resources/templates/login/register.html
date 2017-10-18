@@ -23,22 +23,24 @@
 
         <div class="login form">
             <div class="group">
-                <div class="group-ipt email">
-                    <input type="text" name="email" id="email" class="ipt" placeholder="邮箱地址" required=""/>
-                </div>
-                <div class="group-ipt user">
-                    <input type="text" name="user" id="user" class="ipt" placeholder="输入您的用户名" required="" />
-                </div>
-                <div class="group-ipt password">
-                    <input type="password" name="password" id="password" class="ipt" placeholder="输入您的登录密码" required="" />
-                </div>
-                <div class="group-ipt password1">
-                    <input type="password" name="password1" id="password1" class="ipt" placeholder="请再次输入您的登录密码" required="" />
-                </div>
-                <div class="group-ipt verify">
-                    <input type="text" name="verify" id="verify" class="ipt" placeholder="输入验证码" required="" />
-                    <img src="" class="imgcode" />
-                </div>
+                <form id="register_form" href="" type="POST">
+                    <div class="group-ipt email">
+                        <input type="text" name="email" id="email" class="ipt" placeholder="邮箱地址" required="" onblur="checkEmail()"/>
+                    </div>
+                    <div class="group-ipt user">
+                        <input type="text" name="user" id="user" class="ipt" placeholder="输入您的用户名" required="" />
+                    </div>
+                    <div class="group-ipt password">
+                        <input type="password" name="password" id="password" class="ipt" placeholder="输入您的登录密码" required="" />
+                    </div>
+                    <div class="group-ipt password1">
+                        <input type="password" name="password1" id="password1" class="ipt" placeholder="请再次输入您的登录密码" required="" onblur="checkPassWord()"/>
+                    </div>
+                    <div class="group-ipt verify">
+                        <input type="text" name="verify" id="verify" class="ipt" placeholder="输入验证码" required="" />
+                        <img src="" class="imgcode" />
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -74,6 +76,80 @@
     }).click(function(){
         $(this).attr('src','http://zrong.me/home/index/imgcode?id=' + Math.random());
     });
+
+    function checkEmail(){
+        var email = $.trim($("#email").val());
+        if(email == null || email == ''){
+            return;
+        }
+        $.ajax({
+            url: "cheakEmail",
+            type: "POST",
+            data: {
+                email: email
+            },
+            dataType: "JSON",
+            success: function (result) {
+
+            },
+            error: function (result) {
+                
+            }
+        });
+    }
+    
+    function checkUserName(){
+        var userName = $.trim($("#user").val());
+        if(userName == null || userName == ''){
+            return;
+        }
+        $.ajax({
+            url: "checkName",
+            type: "POST",
+            data: {
+                userName: userName
+            },
+            dataType: "JSON",
+            success: function (result) {
+                
+            },
+            error: function (result) {
+                
+            }
+        })
+    }
+
+    function checkPassWord(){
+        var password = $.trim($("#password").val());
+        var password1 = $.trim($("#password1").val());
+
+        if(password != password1){
+            return false;
+        }
+    }
+
+    $("#button").click(function () {
+        console.log($("#register_form").val());
+        $.ajax({
+            url: 'registerMember',
+            data:{
+                email: $.trim($("#email").val()),
+                userName: $.trim($("#user").val()),
+                password: $.trim($("#password").val()),
+                password1: $.trim($("#password1").val()),
+                verify: $.trim($("#verify").val())
+            },
+            type: "POST",
+            dataType: "JSON",
+            success: function () {
+                
+            },
+            error: function () {
+                
+            }
+        })
+    });
+
 </script>
 
 </body></html>

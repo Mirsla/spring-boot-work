@@ -30,4 +30,26 @@ public interface MemberRepository extends JpaRepository<Member,Long> {
      * @return
      */
     Member  findByEmail(String email);
+
+    /**
+     * 查找当前email在数据库中存在的数量
+     * @param email
+     * @return
+     */
+    Integer countByEmail(String email);
+
+    /**
+     * 查找当前memberName在数据库中是否存在
+     * @param memberName
+     * @return
+     */
+    Integer countByMemberName(String memberName);
+
+    /**
+     * 添加用户
+     * @param member
+     * @return
+     */
+    Integer insertMember(Member member);
+
 }
