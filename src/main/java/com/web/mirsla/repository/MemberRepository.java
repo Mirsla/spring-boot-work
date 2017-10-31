@@ -2,6 +2,7 @@ package com.web.mirsla.repository;
 
 import com.web.mirsla.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author: Mirsla
@@ -50,6 +51,6 @@ public interface MemberRepository extends JpaRepository<Member,Long> {
      * @param member
      * @return
      */
-    Integer insertMember(Member member);
+    /*Integer insertMember(Member member);*/
 
 }

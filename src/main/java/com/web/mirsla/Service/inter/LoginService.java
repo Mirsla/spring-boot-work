@@ -29,6 +29,6 @@ public interface LoginService {
      * @param member
      * @return
      */
-    public Integer insertMember(Member member);
+    public Member insertMember(Member member);
 
 }

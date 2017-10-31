@@ -1,6 +1,7 @@
 package com.web.mirsla.controller;
 
 import com.web.mirsla.Service.inter.LoginService;
+import com.web.mirsla.entity.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -82,7 +84,26 @@ public class LoginController{
     public Map<String,Object> registerMember(String email, String userName, String password, String verify){
         //判断验证码是否正确
 
-
+        //直接往数据库中插入数据
+        Member member = new Member();
+        member.setEmail(email);
+        member.setMemberName(userName);
+        member.setPassword(password);
+        member.setCreateWhen(new Date());
+        try {
+            loginService.insertMember(member);
+        }catch (Exception e){
+            return null;
+        }
         return null;
+    }
+
+    /**
+     * 跳转到主页去
+     * @return
+     */
+    @RequestMapping(value = "main", method = RequestMethod.GET)
+    public String toMain(){
+        return "main/main";
     }
 }

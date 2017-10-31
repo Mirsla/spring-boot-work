@@ -39,7 +39,8 @@ public class LoginServiceImpl implements LoginService{
     }
 
     @Override
-    public Integer insertMember(Member member) {
-        return null;
+    public Member insertMember(Member member) {
+        member = memberRepository.save(member);
+        return member;
     }
 }
