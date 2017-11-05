@@ -14,7 +14,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class IndexController extends BaseController {
 
     @RequestMapping(value = "index", method = RequestMethod.GET)
-    public String toOIndex(){
+    public String toIndex(){
         return "back/index";
+    }
+
+    @RequestMapping(value = "test2", method = RequestMethod.GET)
+    public String toTest2(){
+        return "back/test2";
+    }
+
+    @RequestMapping(value = "test3", method = RequestMethod.GET)
+    public String toTest3(){
+        return "back/test3";
     }
 }
