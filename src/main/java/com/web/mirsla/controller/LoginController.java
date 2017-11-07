@@ -21,7 +21,7 @@ import java.util.Map;
  * @Modified By:登录相关
  */
 @Controller
-public class LoginController{
+public class LoginController extends BaseController{
 
 //    @Autowired(name = "login")
     @Autowired
